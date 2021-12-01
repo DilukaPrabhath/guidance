@@ -1,4 +1,4 @@
-@extends('admin.layout.master_stu_tbl')
+@extends('admin.layout.master')
 @section('content')
 <div class="page-content">
     <div class="container-fluid">
@@ -66,5 +66,11 @@
             </div> <!-- end col -->
         </div> <!-- end row -->
 
+    </div>
+    @stop
+
+    @section('button')
+    <div class="float-right align-item-center mt-2">
+        <a href="{{url('admin/students/create')}}" class="btn btn-info px-4 align-self-center report-btn">Add</a>
     </div>
     @stop

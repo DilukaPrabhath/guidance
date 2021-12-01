@@ -1,4 +1,4 @@
-@extends('admin.layout.master_inqu_tbl')
+@extends('admin.layout.master')
 @section('content')
 <div class="page-content">
     <div class="container-fluid">
@@ -19,7 +19,7 @@
                                 <th>Institute</th>
                                 <th>Mobile</th>
                                 <th>Status</th>
-                                <th>Start date</th>
+                                <th>Process Status</th>
                                 <th>Action</th>
                             </tr>
                             </thead>
@@ -43,24 +43,6 @@
                                     </a>
                                 </td>
                             </tr>
-                            <tr>
-                                <td>INQ/000002</td>
-                                <td>Garrett Winters</td>
-                                <td>Primary</td>
-                                <td>School 2</td>
-                                <td>0770668363</td>
-                                <td><span class="badge badge-success">Pending</span></td>
-                                <td>2011/07/25</td>
-                                <td>
-                                    <a href="{{url('admin/inqueries/view')}}" type="button" class="btn btn-dropbox">
-                                        <i class="fab far fa-eye" style="color: white; font-size:8px;"></i>
-                                    </a>
-                                    <a href="{{url('admin/inqueries/edit')}}" type="button" class="btn btn-danger">
-                                        <i class="fab fas fa-pencil-alt" style="color: white; font-size:8px;"></i>
-                                    </a>
-                                </td>
-                            </tr>
-
 
                             </tbody>
                         </table>
@@ -70,5 +52,11 @@
             </div> <!-- end col -->
         </div> <!-- end row -->
 
+    </div>
+    @stop
+
+    @section('button')
+    <div class="float-right align-item-center mt-2">
+        <a href="{{url('admin/inqueries/create')}}" class="btn btn-info px-4 align-self-center report-btn">Add</a>
     </div>
     @stop
