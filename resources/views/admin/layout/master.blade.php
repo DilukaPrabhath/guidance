@@ -17,6 +17,7 @@
         <link href="{{asset('frogetor/assets/plugins/datatables/dataTables.bootstrap4.min.css')}}" rel="stylesheet" type="text/css" />
         <link href="{{asset('frogetor/assets/plugins/datatables/buttons.bootstrap4.min.css')}}" rel="stylesheet" type="text/css" />
 
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
         <!-- App css -->
         <link href="{{asset('frogetor/assets/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css" />
         <link href="{{asset('frogetor/assets/css/icons.css')}}" rel="stylesheet" type="text/css" />
@@ -99,6 +100,7 @@
 
         <!-- jQuery  -->
         <script src="{{asset('frogetor/assets/js/jquery.min.js')}}"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
         <script src="{{asset('frogetor/assets/js/bootstrap.bundle.min.js')}}"></script>
         <script src="{{asset('frogetor/assets/js/metisMenu.min.js')}}"></script>
         <script src="{{asset('frogetor/assets/js/waves.min.js')}}"></script>

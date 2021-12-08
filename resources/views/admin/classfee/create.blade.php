@@ -184,15 +184,9 @@
                     grade: {
                         required: true,
                         maxlength: 70,
-
                     },
                     fee: {
                         required: true,
-                        // remote: {
-                        //      url: "/check_grade_validation",
-                        //      type: "get",
-                        //      data: {"id" : id,"s_ty" : s_ty},
-                        //         }
                     },
                     year: {
                         required: true,

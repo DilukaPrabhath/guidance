@@ -61,10 +61,6 @@ Route::get('/validate-phone',[App\Http\Controllers\AdmInstiCon::class, 'phoneval
 Route::get('/validate-name',[App\Http\Controllers\AdmInstiCon::class, 'namevalidate']);
 Route::get('/check_edit_email',[App\Http\Controllers\AdmInstiCon::class, 'oldemailvalidate']);
 
-Route::get('/admin/students', [App\Http\Controllers\AdminStudentCon::class, 'index']);
-Route::get('/admin/students/create', [App\Http\Controllers\AdminStudentCon::class, 'create']);
-Route::get('/admin/students/view', [App\Http\Controllers\AdminStudentCon::class, 'view']);
-Route::get('/admin/students/edit', [App\Http\Controllers\AdminStudentCon::class, 'edit']);
 
 //Bank
 Route::get('/admin/banks', [App\Http\Controllers\AdminBankCon::class, 'create']);
@@ -73,20 +69,32 @@ Route::get('/admin/banks/edit/{id}', [App\Http\Controllers\AdminBankCon::class, 
 Route::post('/admin/banks/update/{id}', [App\Http\Controllers\AdminBankCon::class, 'update']);
 Route::get('/validate-bank', [App\Http\Controllers\AdminBankCon::class, 'validatebank']);
 
+//inquries
 Route::get('/admin/inqueries', [App\Http\Controllers\AdminInqueryCon::class, 'index']);
 Route::get('/admin/inqueries/create', [App\Http\Controllers\AdminInqueryCon::class, 'create']);
-Route::get('/admin/inqueries/view', [App\Http\Controllers\AdminInqueryCon::class, 'view']);
-Route::get('/admin/inqueries/edit', [App\Http\Controllers\AdminInqueryCon::class, 'edit']);
+Route::post('admin/inqueries/store', [App\Http\Controllers\AdminInqueryCon::class, 'store']);
+Route::get('/admin/inqueries/view/{pid}', [App\Http\Controllers\AdminInqueryCon::class, 'view']);
+Route::get('/admin/inqueries/edit/{pid}', [App\Http\Controllers\AdminInqueryCon::class, 'edit']);
+Route::post('/admin/inqueries/update/{id}', [App\Http\Controllers\AdminInqueryCon::class, 'update']);
+
+//application
+Route::get('/admin/applications', [App\Http\Controllers\AdminApplicationCon::class, 'index']);
+Route::post('/admin/applications/update/{id}', [App\Http\Controllers\AdminApplicationCon::class, 'update']);
+
+//student
+Route::post('/admin/inqueries/registration/update/{id}', [App\Http\Controllers\AdminStudentCon::class, 'update']);
+Route::get('/admin/students', [App\Http\Controllers\AdminStudentCon::class, 'index']);
+Route::get('/student/parent2_nic', [App\Http\Controllers\AdminStudentCon::class, 'parent2_details']);
+
+//Scholarship
+Route::get('admin/scholarship', [App\Http\Controllers\AdmScholarshipCon::class, 'index']);
+Route::get('admin/scholarship/create', [App\Http\Controllers\AdmScholarshipCon::class, 'create']);
+Route::post('admin/scholarship/store', [App\Http\Controllers\AdmScholarshipCon::class, 'store']);
 
 Route::get('/admin/payments', [App\Http\Controllers\AdminPaymentCon::class, 'index']);
 Route::get('/admin/payments/create', [App\Http\Controllers\AdminPaymentCon::class, 'create']);
 Route::get('/admin/payments/view', [App\Http\Controllers\AdminPaymentCon::class, 'view']);
 Route::get('/admin/payments/old/view', [App\Http\Controllers\AdminPaymentCon::class, 'old_payment']);
-
-Route::get('/admin/applications', [App\Http\Controllers\AdminApplicationCon::class, 'index']);
-Route::get('/admin/applications/create', [App\Http\Controllers\AdminApplicationCon::class, 'create']);
-Route::get('/admin/applications/view', [App\Http\Controllers\AdminApplicationCon::class, 'view']);
-Route::get('/admin/applications/edit', [App\Http\Controllers\AdminApplicationCon::class, 'edit']);
 
 Route::get('/admin/awards/create', [App\Http\Controllers\AdminAwordsCon::class, 'create']);
 Route::get('/admin/students/awards/view', [App\Http\Controllers\AdminAwordsCon::class, 'view']);

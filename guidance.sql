@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 01, 2021 at 05:38 AM
+-- Generation Time: Dec 02, 2021 at 02:41 PM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 7.4.15
 
@@ -360,10 +360,10 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `parents`
+-- Table structure for table `parentms`
 --
 
-CREATE TABLE `parents` (
+CREATE TABLE `parentms` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `st_id` int(11) NOT NULL,
   `parent_nic` varchar(12) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -375,6 +375,16 @@ CREATE TABLE `parents` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `parentms`
+--
+
+INSERT INTO `parentms` (`id`, `st_id`, `parent_nic`, `parent_name`, `parent_mobile`, `parent_email`, `parent_address`, `parent_relationship`, `created_at`, `updated_at`) VALUES
+(2, 3, '902784527V', 'ee', '0770668974', 'a@e.c', '360', 'Father', '2021-12-01 01:09:31', '2021-12-01 06:27:25'),
+(3, 4, '323232333333', '2222', '021235666', '2@3.c', 'eer', 'ereer', '2021-12-01 01:21:03', '2021-12-01 01:21:03'),
+(4, 5, '932784527V', 'ee', '0770668974', 'a@e.c', '360', 'Father', '2021-12-01 06:23:00', '2021-12-01 06:23:00'),
+(5, 6, '932784527V', 'ee', '0770668974', 'a@e.c', '360', 'Father', '2021-12-01 06:25:39', '2021-12-01 06:25:39');
 
 -- --------------------------------------------------------
 
@@ -397,6 +407,7 @@ CREATE TABLE `password_resets` (
 CREATE TABLE `students` (
   `id` int(10) UNSIGNED NOT NULL,
   `student_full_name` varchar(199) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `dob` date NOT NULL,
   `inq_number` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
   `re_ins_id` int(11) NOT NULL,
   `re_grd_id` int(11) NOT NULL,
@@ -427,6 +438,14 @@ CREATE TABLE `students` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `students`
+--
+
+INSERT INTO `students` (`id`, `student_full_name`, `dob`, `inq_number`, `re_ins_id`, `re_grd_id`, `inq_type`, `inq_status`, `stu_status`, `gender`, `emergency_contact_nic`, `emergency_contact_name`, `emergency_contact_relationship`, `interview_status`, `re_interview_apply`, `application_status`, `resipt_number`, `resipt_image`, `interview_type`, `student_image`, `registration_date`, `pre_sc_att`, `reg_typ`, `schoolership_apply`, `schoolership_resipt`, `is_id_fee_paid`, `is_id_issue`, `syllubus_type`, `student_id`, `grade_now`, `created_at`, `updated_at`) VALUES
+(3, 'Dilshan Amila', '2021-12-15', 'IQ/202112/0001', 1, 2, 1, 1, 1, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2021-12-01 01:09:31', '2021-12-01 06:27:25'),
+(4, 'Bharatha Shashiruwan', '2021-12-16', 'IQ/202112/0002', 1, 4, 2, 1, 1, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2021-12-01 01:21:02', '2021-12-01 01:21:02');
 
 -- --------------------------------------------------------
 
@@ -643,9 +662,9 @@ ALTER TABLE `migrations`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `parents`
+-- Indexes for table `parentms`
 --
-ALTER TABLE `parents`
+ALTER TABLE `parentms`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -776,16 +795,16 @@ ALTER TABLE `migrations`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
--- AUTO_INCREMENT for table `parents`
+-- AUTO_INCREMENT for table `parentms`
 --
-ALTER TABLE `parents`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+ALTER TABLE `parentms`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `students`
 --
 ALTER TABLE `students`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `subjects`

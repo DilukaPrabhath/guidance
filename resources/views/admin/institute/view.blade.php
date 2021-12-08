@@ -49,7 +49,7 @@
                                 </table>
                             </div>
                             <div class="col-lg-6">
-                                <table class="table table-bordered mb-0 table-centered">
+                                {{-- <table class="table table-bordered mb-0 table-centered">
                                     <thead>
                                     <tr>
                                         <th>Grade</th>
@@ -62,7 +62,7 @@
 
                                     </tr>
                                     </tbody>
-                                </table><!--end /table-->
+                                </table><!--end /table--> --}}
                             </div>
 
 

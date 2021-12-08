@@ -31,6 +31,7 @@
                 <li><a href="{{url('/admin/inqueries')}}">Inqueries</a></li>
                 <li><a href="{{url('/admin/applications')}}">Applications</a></li>
                 <li><a href="{{url('/admin/students')}}">Registrations</a></li>
+                <li><a href="{{url('/admin/scholarship')}}">Request Scholarship</a></li>
             </ul>
         </li>
 

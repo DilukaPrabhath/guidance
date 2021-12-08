@@ -83,6 +83,7 @@
                                         @enderror
                                     </div>
                                 </div>
+
                                 <div class="form-group row">
                                     <label class="col-sm-2 col-form-label text-right">Status</label>
                                     <div class="col-sm-10">
@@ -99,7 +100,7 @@
 
                                 </div>
                                 <div class="col-lg-6">
-                                    <table class="table table-bordered mb-0 table-centered">
+                                    {{-- <table class="table table-bordered mb-0 table-centered">
                                         <thead>
                                         <tr>
                                             <th>Grade</th>
@@ -112,7 +113,7 @@
 
                                         </tr>
                                         </tbody>
-                                    </table><!--end /table-->
+                                    </table><!--end /table--> --}}
                                 </div>
                                 <div>
                                     <div class="col-lg-6">

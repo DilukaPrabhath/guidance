@@ -8,8 +8,8 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="mt-0 header-title">Create Inquery</h4>
-                        <form action="{{url('admin/inqueries/store')}}" method="POST" autocomplete="off" id="regForm" enctype="multipart/form-data">
+                        <h4 class="mt-0 header-title">Create Rcholarship Request</h4>
+                        <form action="{{url('admin/scholarship/store')}}" method="POST" autocomplete="off" id="regForm" enctype="multipart/form-data">
                             @csrf
 
                         <div class="row">
@@ -48,18 +48,6 @@
                                 </div>
 
                                 <div class="form-group row">
-                                    <label class="col-sm-3 col-form-label text-right">Institute</label>
-                                    <div class="col-sm-9">
-                                        <select class="form-control" name="institute" id="institute">
-                                            <option value="">Select Institute</option>
-                                            @foreach($institute as $value)
-                                            <option value="{{$value->id}}">{{$value->institute_name}}</option>
-                                            @endForeach
-                                        </select>
-                                    </div>
-                                </div>
-
-                                <div class="form-group row">
                                     <label class="col-sm-3 col-form-label text-right">Request Grade</label>
                                     <div class="col-sm-9">
                                         <select class="form-control" name="request_grade" id="request_grade">
@@ -70,12 +58,6 @@
                                             <option value="3">Grade 3</option>
                                             <option value="4">Grade 4</option>
                                             <option value="5">Grade 5</option>
-                                            <option value="6">Grade 6</option>
-                                            <option value="7">Grade 7</option>
-                                            <option value="8">Grade 8</option>
-                                            <option value="9">Grade 9</option>
-                                            <option value="10">Grade 10</option>
-                                            <option value="11">Grade 11</option>
                                         </select>
                                     </div>
                                 </div>
@@ -146,7 +128,7 @@
                             <div class="row">
                                 <div class="col-lg-12">
                                     <button type="submit" id="x" class="btn btn-success waves-effect waves-light" style="color: white;"><i class="mdi mdi-check-all mr-2"></i>Submit</button>
-                                    <a type="button" href="{{url('admin/inqueries')}}" class="btn btn-primary waves-effect waves-light" style="margin-left: 5px;"><i class="mdi mdi-close" style="margin-right: 5px;"></i>Close</a>
+                                    <a type="button" href="{{url('admin/scholarship')}}" class="btn btn-primary waves-effect waves-light" style="margin-left: 5px;"><i class="mdi mdi-close" style="margin-right: 5px;"></i>Close</a>
                                 </div>
                             </div>
                         </div>
