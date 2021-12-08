@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 02, 2021 at 02:41 PM
+-- Generation Time: Dec 08, 2021 at 07:39 AM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 7.4.15
 
@@ -381,10 +381,13 @@ CREATE TABLE `parentms` (
 --
 
 INSERT INTO `parentms` (`id`, `st_id`, `parent_nic`, `parent_name`, `parent_mobile`, `parent_email`, `parent_address`, `parent_relationship`, `created_at`, `updated_at`) VALUES
-(2, 3, '902784527V', 'ee', '0770668974', 'a@e.c', '360', 'Father', '2021-12-01 01:09:31', '2021-12-01 06:27:25'),
+(2, 3, '902784527V', 'ee', '0770668974', 'a@e.c', '360/B,', 'Father', '2021-12-01 01:09:31', '2021-12-05 12:22:40'),
 (3, 4, '323232333333', '2222', '021235666', '2@3.c', 'eer', 'ereer', '2021-12-01 01:21:03', '2021-12-01 01:21:03'),
 (4, 5, '932784527V', 'ee', '0770668974', 'a@e.c', '360', 'Father', '2021-12-01 06:23:00', '2021-12-01 06:23:00'),
-(5, 6, '932784527V', 'ee', '0770668974', 'a@e.c', '360', 'Father', '2021-12-01 06:25:39', '2021-12-01 06:25:39');
+(5, 6, '932784527V', 'ee', '0770668974', 'a@e.c', '360', 'Father', '2021-12-01 06:25:39', '2021-12-01 06:25:39'),
+(6, 3, '953657812V', 'p2', '0770668694', 'prnt2@g.com', 'eeeee', 'eeee', '2021-12-05 12:30:08', '2021-12-05 13:15:46'),
+(7, 3, 'sss', 'sss', '0770668361', 's@f.n', 'www', 'www', '2021-12-05 13:53:42', '2021-12-05 13:53:42'),
+(8, 7, '936254781V', 'Danedra', '0770668954', 'danedra@gmail.com', 'test address', 'Uncle', '2021-12-06 03:21:05', '2021-12-06 03:21:05');
 
 -- --------------------------------------------------------
 
@@ -417,6 +420,7 @@ CREATE TABLE `students` (
   `gender` int(11) NOT NULL,
   `emergency_contact_nic` varchar(12) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `emergency_contact_name` varchar(150) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `emergency_contact_mobile` varchar(15) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `emergency_contact_relationship` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `interview_status` int(11) DEFAULT NULL,
   `re_interview_apply` int(11) DEFAULT NULL,
@@ -427,6 +431,8 @@ CREATE TABLE `students` (
   `student_image` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `registration_date` date DEFAULT NULL,
   `pre_sc_att` int(11) DEFAULT NULL,
+  `pre_school_id` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `recod` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `reg_typ` int(11) DEFAULT NULL,
   `schoolership_apply` int(11) DEFAULT NULL,
   `schoolership_resipt` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -434,7 +440,10 @@ CREATE TABLE `students` (
   `is_id_issue` int(11) DEFAULT NULL,
   `syllubus_type` int(11) DEFAULT NULL,
   `student_id` varchar(120) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `institute` int(11) DEFAULT NULL,
   `grade_now` int(11) DEFAULT NULL,
+  `stu_img` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `pamt_typ` int(11) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -443,9 +452,10 @@ CREATE TABLE `students` (
 -- Dumping data for table `students`
 --
 
-INSERT INTO `students` (`id`, `student_full_name`, `dob`, `inq_number`, `re_ins_id`, `re_grd_id`, `inq_type`, `inq_status`, `stu_status`, `gender`, `emergency_contact_nic`, `emergency_contact_name`, `emergency_contact_relationship`, `interview_status`, `re_interview_apply`, `application_status`, `resipt_number`, `resipt_image`, `interview_type`, `student_image`, `registration_date`, `pre_sc_att`, `reg_typ`, `schoolership_apply`, `schoolership_resipt`, `is_id_fee_paid`, `is_id_issue`, `syllubus_type`, `student_id`, `grade_now`, `created_at`, `updated_at`) VALUES
-(3, 'Dilshan Amila', '2021-12-15', 'IQ/202112/0001', 1, 2, 1, 1, 1, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2021-12-01 01:09:31', '2021-12-01 06:27:25'),
-(4, 'Bharatha Shashiruwan', '2021-12-16', 'IQ/202112/0002', 1, 4, 2, 1, 1, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2021-12-01 01:21:02', '2021-12-01 01:21:02');
+INSERT INTO `students` (`id`, `student_full_name`, `dob`, `inq_number`, `re_ins_id`, `re_grd_id`, `inq_type`, `inq_status`, `stu_status`, `gender`, `emergency_contact_nic`, `emergency_contact_name`, `emergency_contact_mobile`, `emergency_contact_relationship`, `interview_status`, `re_interview_apply`, `application_status`, `resipt_number`, `resipt_image`, `interview_type`, `student_image`, `registration_date`, `pre_sc_att`, `pre_school_id`, `recod`, `reg_typ`, `schoolership_apply`, `schoolership_resipt`, `is_id_fee_paid`, `is_id_issue`, `syllubus_type`, `student_id`, `institute`, `grade_now`, `stu_img`, `pamt_typ`, `created_at`, `updated_at`) VALUES
+(3, 'Dilshan Amila', '2021-12-15', 'IQ/202112/0001', 1, 2, 1, 2, 4, 1, '9362578742V', 'test 1', '0770668327', 'Mother', 1, 1, 1, '123456789', '1638732071.jpg', 1, NULL, '2021-12-07', 1, '123123', 'test', NULL, NULL, NULL, 2, 2, 2, 'GIS/202112/0007', 1, 7, '1638732222.jpg', 2, '2021-12-01 01:09:31', '2021-12-06 03:25:42'),
+(4, 'Bharatha Shashiruwan', '2021-12-16', 'IQ/202112/0002', 1, 4, 2, 1, 2, 1, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2021-12-01 01:21:02', '2021-12-01 01:21:02'),
+(7, 'Shalinda AP', '2021-12-06', 'IQ/202112/0003', 1, 4, 1, 2, 4, 1, NULL, NULL, NULL, NULL, 1, 2, 1, '98652', '1638780733.jpg', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2021-12-06 03:21:05', '2021-12-06 03:22:41');
 
 -- --------------------------------------------------------
 
@@ -798,13 +808,13 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `parentms`
 --
 ALTER TABLE `parentms`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `students`
 --
 ALTER TABLE `students`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `subjects`
