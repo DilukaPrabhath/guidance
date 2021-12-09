@@ -98,7 +98,8 @@
                                             <option value="2" {{$data[0]->stu_status=='2'?'selected':''}}>Application Step</option>
                                             <option value="3" {{$data[0]->stu_status=='3'?'selected':''}}>Interview Step</option>
                                             <option value="4" {{$data[0]->stu_status=='4'?'selected':''}}>Registerd</option>
-                                            <option value="5" {{$data[0]->stu_status=='5'?'selected':''}}>Leved</option>
+                                            <option value="5" {{$data[0]->stu_status=='5'?'selected':''}}>Student</option>
+                                            <option value="5" {{$data[0]->stu_status=='6'?'selected':''}}>Leved</option>
 
                                         </select>
                                     </div>
@@ -155,7 +156,7 @@
                                 <div class="form-group row">
                                     <label class="col-sm-3 col-form-label text-right">Inquery Status</label>
                                     <div class="col-sm-9">
-                                        <select class="form-control" name="inquery_type" id="inquery_type">
+                                        <select class="form-control" name="inquery_status" id="inquery_status">
                                             <option value="">Select Type</option>
                                             <option value="1" {{$data[0]->inq_status=='1'?'selected':''}}>Investigating</option>
                                             <option value="2" {{$data[0]->inq_status=='2'?'selected':''}}>Confirm</option>

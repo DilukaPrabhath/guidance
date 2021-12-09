@@ -441,42 +441,42 @@
                                         <div class="form-group row">
                                             <label for="parent_nic" class="col-sm-3 col-form-label text-right">Parent 1 NIC</label>
                                             <div class="col-sm-9">
-                                                <input class="form-control" type="text" value="{{$data[0]->parent_nic}}" name="parent1_nic" id="parent_nic">
+                                                <input class="form-control" type="text" value="{{$data[0]->parent_nic}}" name="parent1_nic" id="parent1_nic">
                                             </div>
                                         </div>
 
                                         <div class="form-group row">
                                             <label for="parent_name" class="col-sm-3 col-form-label text-right">Parent 1 Name</label>
                                             <div class="col-sm-9">
-                                                <input class="form-control" type="text" value="{{$data[0]->parent_name}}" name="parent1_name" id="parent_name">
+                                                <input class="form-control" type="text" value="{{$data[0]->parent_name}}" name="parent1_name" id="parent1_name">
                                             </div>
                                         </div>
 
                                         <div class="form-group row">
                                             <label for="parent_email" class="col-sm-3 col-form-label text-right">Parent 1 Email</label>
                                             <div class="col-sm-9">
-                                                <input class="form-control" type="email" value="{{$data[0]->parent_email}}" name="parent1_email" id="parent_email">
+                                                <input class="form-control" type="email" value="{{$data[0]->parent_email}}" name="parent1_email" id="parent1_email">
                                             </div>
                                         </div>
 
                                         <div class="form-group row">
                                             <label for="parent_mobile" class="col-sm-3 col-form-label text-right">Parent 1 Mobile</label>
                                             <div class="col-sm-9">
-                                                <input class="form-control" type="number" value="{{$data[0]->parent_mobile}}" name="parent1_mobile" id="parent_mobile">
+                                                <input class="form-control" type="number" value="{{$data[0]->parent_mobile}}" name="parent1_mobile" id="parent1_mobile">
                                             </div>
                                         </div>
 
                                         <div class="form-group row">
                                             <label for="address" class="col-sm-3 col-form-label text-right">Parent 1 Address</label>
                                             <div class="col-sm-9">
-                                                <input class="form-control" type="text" value="{{$data[0]->parent_address}}" name="address1" id="address">
+                                                <input class="form-control" type="text" value="{{$data[0]->parent_address}}" name="address1" id="address1">
                                             </div>
                                         </div>
 
                                         <div class="form-group row">
                                             <label for="relationship" class="col-sm-3 col-form-label text-right">Relationship</label>
                                             <div class="col-sm-9">
-                                                <input class="form-control" type="text" value="{{$data[0]->parent_relationship}}" name="relationship1" id="relationship">
+                                                <input class="form-control" type="text" value="{{$data[0]->parent_relationship}}" name="relationship1" id="relationship1">
                                             </div>
                                         </div>
 
@@ -495,6 +495,9 @@
                                                 @else
                                                 <input class="form-control" type="text" value="" name="parent_nic2" id="parent_nic2">
                                                 @endif
+                                                @error('parent_nic2')
+                                                <div class="alert" style="color: #f93b7a;padding-left: 0px;">{{ $message }}</div>
+                                                @enderror
                                             </div>
                                         </div>
 
@@ -506,6 +509,9 @@
                                                 @else
                                                 <input class="form-control" type="text" value="" name="parent_name2" id="parent_name2">
                                                 @endif
+                                                @error('parent_name2')
+                                                <div class="alert" style="color: #f93b7a;padding-left: 0px;">{{ $message }}</div>
+                                                @enderror
                                             </div>
                                         </div>
 
@@ -517,6 +523,9 @@
                                                 @else
                                                 <input class="form-control" type="email" value="" name="parent_email2" id="parent_email2">
                                                 @endif
+                                                @error('parent_email2')
+                                                <div class="alert" style="color: #f93b7a;padding-left: 0px;">{{ $message }}</div>
+                                                @enderror
                                             </div>
                                         </div>
 
@@ -528,6 +537,9 @@
                                                 @else
                                                 <input class="form-control" type="number" value="" name="parent_mobile2" id="parent_mobile2">
                                                 @endif
+                                                @error('parent_mobile2')
+                                                <div class="alert" style="color: #f93b7a;padding-left: 0px;">{{ $message }}</div>
+                                                @enderror
                                             </div>
                                         </div>
 
@@ -539,6 +551,9 @@
                                                 @else
                                                 <input class="form-control" type="text" value="" name="address2" id="address2">
                                                 @endif
+                                                @error('address2')
+                                                <div class="alert" style="color: #f93b7a;padding-left: 0px;">{{ $message }}</div>
+                                                @enderror
                                             </div>
                                         </div>
 
@@ -550,6 +565,9 @@
                                                 @else
                                                 <input class="form-control" type="text" value="" name="relationship2" id="relationship2">
                                                 @endif
+                                                @error('relationship2')
+                                                <div class="alert" style="color: #f93b7a;padding-left: 0px;">{{ $message }}</div>
+                                                @enderror
                                             </div>
                                         </div>
 
@@ -722,6 +740,56 @@ $("#regForm3").validate({
             minlength: 10,
             number: true,
         },
+        parent_nic1: {
+            required: true,
+            maxlength: 12,
+            minlength: 10,
+        },
+        parent_name1: {
+            required: true,
+            maxlength: 100
+        },
+        parent_email1: {
+            required: true,
+            maxlength: 100,
+        },
+        parent_mobile1: {
+            required: true,
+            maxlength: 150,
+        },
+        address1: {
+            required: true,
+            maxlength: 100,
+        },
+        relationship1: {
+            required: true,
+            maxlength: 50,
+        },
+        parent_nic2: {
+            required: true,
+            maxlength: 12,
+            minlength: 10,
+        },
+        parent_name2: {
+            required: true,
+            maxlength: 100
+        },
+        parent_email2: {
+            required: true,
+            maxlength: 100,
+        },
+        parent_mobile2: {
+            required: true,
+            maxlength: 150,
+        },
+        address2: {
+            required: true,
+            maxlength: 100,
+        },
+        relationship2: {
+            required: true,
+            maxlength: 50,
+        },
 
 
     },
@@ -767,8 +835,59 @@ $("#regForm3").validate({
         relationship: {
             required: "Emargancy Contact Relationship is required",
             maxlength: "Emargancy Contact Relationship cannot be more than 100 characters"
-
-        }
+        },
+        parent_nic1: {
+            required: "Parent 1 NIC is required",
+            maxlength: "Parent 1 Contact NIC cannot be more than 12 characters",
+            minlength: "Parent 1 Contact NIC cannot be less than 10 characters"
+        },
+        parent_name1: {
+            required: "Parent 1 Contact Name is required",
+            maxlength: "Parent 1 Contact Name cannot be more than 100 characters"
+        },
+        parent_email1: {
+            required: "Parent 1 email is required",
+            maxlength: "Parent 1 Contact NIC cannot be more than 100 characters"
+        },
+        parent_mobile1: {
+            required: "Parent 1 Number is required",
+            maxlength: "Parent 1 Number cannot be more than 10 characters",
+            minlength: "Parent 1 cannot be less than 10 characters"
+        },
+        address1: {
+            required: "Parent 1 Address is required",
+            maxlength: "Parent 1 Address cannot be more than 150 characters",
+        },
+        relationship1: {
+            required: "Parent 1  Relationship is required",
+            maxlength: "Parent 1 Contact Relationship cannot be more than 50 characters"
+        },
+        parent_nic2: {
+            required: "Parent 2 NIC is required",
+            maxlength: "Parent 2 Contact NIC cannot be more than 12 characters",
+            minlength: "Parent 2 Contact NIC cannot be less than 10 characters"
+        },
+        parent_name2: {
+            required: "Parent 2 Contact Name is required",
+            maxlength: "Parent 2 Contact Name cannot be more than 100 characters"
+        },
+        parent_email2: {
+            required: "Parent 2 email is required",
+            maxlength: "Parent 2 Contact NIC cannot be more than 100 characters"
+        },
+        parent_mobile2: {
+            required: "Parent 2 Number is required",
+            maxlength: "Parent 2 Number cannot be more than 10 characters",
+            minlength: "Parent 2 cannot be less than 10 characters"
+        },
+        address2: {
+            required: "Parent 2 Address is required",
+            maxlength: "Parent 2 Address cannot be more than 150 characters",
+        },
+        relationship2: {
+            required: "Parent 2  Relationship is required",
+            maxlength: "Parent 2 Contact Relationship cannot be more than 50 characters"
+        },
     }
 });
 

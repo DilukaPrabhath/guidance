@@ -33,6 +33,17 @@ class AdminTktPriceCon extends Controller
 
     public function store(Request $request){
 
+        // $rules = [
+        //     'price' => 'required',
+        //     'status'  => 'required',
+        //     'max_count'  => 'required',
+        //     'ticket_category'     => ['required', function($attr, $value, $fail) use ($request){
+        //         if( EventTicket::where('grd_id', $request->grade)->where('syl_id',$request->syllabus)->where('year',$request->year)->count() > 0 ){
+        //             $fail("This Grade alredy fild.");
+        //         }
+        //     }]
+        // ];
+
         $ticprice = new EventTicket();
 
         $ticprice->evt_id = $request->t_id;
@@ -53,18 +64,19 @@ class AdminTktPriceCon extends Controller
     }
 
     public function edit($id,$t_id){
-        // return $id;
+        $evid = $id;
         $ticedit = EventTicket::find($t_id);
         $t_id = $t_id;
         $tic = EventTicket::datatble($id);
-        return view('admin.eventticket.edit',compact('ticedit','tic','t_id'));
+        return view('admin.eventticket.edit',compact('ticedit','tic','t_id','evid'));
     }
 
-    public function update(Request $request,$id){
+    public function update(Request $request,$id,$t_id){
+        //return $t_id;
 
-        $ticprice = EventTicket::find($id);
+        $ticprice = EventTicket::find($t_id);
 
-        $ticprice->evt_id = $request->t_id;
+        $ticprice->evt_id = $id;
         $ticprice->price = $request->price;
         $ticprice->ticket_category = $request->ticket_category;
         $ticprice->max_count = $request->max_count;
@@ -75,7 +87,7 @@ class AdminTktPriceCon extends Controller
             'message' => 'Event Ticket Category Updated Successfully!',
             'alert-type' => 'Success'
         );
-        $id = $request->t_id;
+        $id = $id;
         return redirect('admin/event_tickets/create/'.$id)->with($notification);
 
 

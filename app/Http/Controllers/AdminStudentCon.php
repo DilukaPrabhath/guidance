@@ -16,6 +16,16 @@ class AdminStudentCon extends Controller
 
        public function update(Request $request,$id){
         //return $request;
+        // $this->validate(request(), [
+
+        //     'parent_nic2' => 'required',
+        //     'parent_name2' => 'required',
+        //     'parent_email2' => 'required',
+        //     'parent_mobile2' => 'required',
+        //     'address2' => 'required',
+        //     'relationship2' => 'required',
+        //     ]);
+
 
         $now = Carbon::now();
             $year = $now->year;

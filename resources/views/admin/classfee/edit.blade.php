@@ -10,8 +10,9 @@
                 <div class="card">
                     <div class="card-body">
                         <h4 class="mt-0 header-title">Update {{$sch->institute_name}} Class Fees</h4>
-                        <form action="{{url('/admin/classfee/update')}}/{{$fee->grd_id}}" method="POST" autocomplete="off" id="regForm" enctype="multipart/form-data">
+                        <form action="{{url('/admin/classfee/update')}}/{{$cls_id}}" method="POST" autocomplete="off" id="regForm" enctype="multipart/form-data">
                             @csrf
+
                             <input class="form-control" type="hidden" value="{{$fee->ins_id}}" name="c_id" id="c_id">
                             <input class="form-control" type="hidden" value="{{$sch->pre_or_sch}}" name="s_ty" id="s_ty">
                             <input class="form-control" type="hidden" value="" name="year2" id="year2">
@@ -53,8 +54,8 @@
                                     <div class="col-sm-10">
                                         <select class="form-control" name="syllabus" id="syllabus">
                                             <option value="">Select</option>
-                                            <option value="1" {{$fee->status=='1'?'selected':''}}>Local</option>
-                                            <option value="2" {{$fee->status=='2'?'selected':''}}>Edexl</option>
+                                            <option value="1" {{$fee->syl_id=='1'?'selected':''}}>Local</option>
+                                            <option value="2" {{$fee->syl_id=='2'?'selected':''}}>Edexl</option>
                                         </select>
                                         @error('syllabus')
                                         <div class="alert" style="color: #f93b7a;padding-left: 0px;">{{ $message }}</div>

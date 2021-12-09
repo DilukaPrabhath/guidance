@@ -141,7 +141,7 @@ Route::get('/admin/event_tickets/create/{id}', [App\Http\Controllers\AdminTktPri
 Route::get('/admin/event_tickets/view/{id}', [App\Http\Controllers\AdminTktPriceCon::class, 'view']);
 Route::get('/admin/event_tickets/edit/{id}/{t_id}', [App\Http\Controllers\AdminTktPriceCon::class, 'edit']);
 Route::post('/admin/event_tickets/store', [App\Http\Controllers\AdminTktPriceCon::class, 'store']);
-Route::post('/admin/event_tickets/update/{id}', [App\Http\Controllers\AdminTktPriceCon::class, 'update']);
+Route::post('/admin/event_tickets/update/{id}/{t_id}', [App\Http\Controllers\AdminTktPriceCon::class, 'update']);
 Route::get('/check_ticket_category',[App\Http\Controllers\AdminTktPriceCon::class, 'validateactivity']);
 
 //class fee

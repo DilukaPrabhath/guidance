@@ -9,7 +9,7 @@
                 <div class="card">
                     <div class="card-body">
                         <h4 class="mt-0 header-title">Update Ticket Category</h4>
-                        <form action="{{url('/admin/event_tickets/update')}}/{{$ticedit->id}}" method="POST" autocomplete="off" id="regForm" enctype="multipart/form-data">
+                        <form action="{{url('/admin/event_tickets/update')}}/{{$evid}}/{{$t_id}}" method="POST" autocomplete="off" id="regForm" enctype="multipart/form-data">
                             @csrf
                             <input class="form-control" type="hidden" value="{{$t_id}}" name="t_id" id="t_id">
                         <div class="row">

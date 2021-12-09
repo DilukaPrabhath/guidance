@@ -160,8 +160,8 @@ class AdminInqueryCon extends Controller
             }else{
             $stu->gender     = 2;
         }
-        $stu->inq_status  = 1;
-        $stu->stu_status = 1;
+        $stu->inq_status  = $request->inquery_status;
+        // $stu->stu_status = 1;
         $stu->save();
 
         $parent = Parentm::find($id);
