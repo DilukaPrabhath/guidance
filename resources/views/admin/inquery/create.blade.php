@@ -253,6 +253,40 @@
 
     </script>
 
+<script>
+    //   autocomplete
+$(document).ready(function(){
+ console.log("HI2");
+$('#parent_nic').autocomplete({
 
+ source: function(request, response) {
+   $.getJSON("{{ url('/student/parent2_nic') }}",
+    {parent_nic2:$("#parent_nic").val()},
+       response);
+ },
+ minLength: 1,
+ width: "100%",
+ open: function(event,ui){
+     var autocomplete=$(".ui-autocomplete:visible");
+     var oldTop=autocomplete.offset().top;
+     var newTop = oldTop-$("#parent_nic").height()+25;
+     autocomplete.css("top", newTop);
+ },
+ select:function(event,ui){
+     //console.log(ui);
+     var name = ui.item.parent_name2;
+     var email = ui.item.parent_email2;
+     var mobile = ui.item.parent_mobile2;
+     var address = ui.item.parent_address2;
+
+     document.getElementById('parent_name').value = name;
+     document.getElementById('parent_email').value = email;
+     document.getElementById('parent_mobile').value = mobile;
+     document.getElementById('address').value = address;
+
+ },
+});
+});
+   </script>
     @stop
 
